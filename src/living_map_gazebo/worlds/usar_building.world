@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="usar_building">
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <physics type="ode">
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <model name="walls">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="link">
+        <collision name="n"><pose>0 10 0.6 0 0 0</pose><geometry><box><size>20 0.2 1.2</size></box></geometry></collision>
+        <visual name="nv"><pose>0 10 0.6 0 0 0</pose><geometry><box><size>20 0.2 1.2</size></box></geometry></visual>
+        <collision name="s"><pose>0 -10 0.6 0 0 0</pose><geometry><box><size>20 0.2 1.2</size></box></geometry></collision>
+        <visual name="sv"><pose>0 -10 0.6 0 0 0</pose><geometry><box><size>20 0.2 1.2</size></box></geometry></visual>
+        <collision name="e"><pose>10 0 0.6 0 0 0</pose><geometry><box><size>0.2 20 1.2</size></box></geometry></collision>
+        <visual name="ev"><pose>10 0 0.6 0 0 0</pose><geometry><box><size>0.2 20 1.2</size></box></geometry></visual>
+        <collision name="w"><pose>-10 0 0.6 1.5708 0 0</pose><geometry><box><size>0.2 20 1.2</size></box></geometry></collision>
+        <visual name="wv"><pose>-10 0 0.6 0 1.5708 1.5708</pose><geometry><box><size>1.2 0.2 20</size></box></geometry></visual>
+
+        <collision name="i1"><pose>-4 2 0.6 0 0 0</pose><geometry><box><size>0.2 12 1.2</size></box></geometry></collision>
+        <visual name="i1v"><pose>-4 2 0.6 0 0 0</pose><geometry><box><size>0.2 12 1.2</size></box></geometry></visual>
+
+        <collision name="i2"><pose>2 -3 0.6 0 0 0</pose><geometry><box><size>0.2 14 1.2</size></box></geometry></collision>
+        <visual name="i2v"><pose>2 -3 0.6 0 0 0</pose><geometry><box><size>0.2 14 1.2</size></box></geometry></visual>
+
+        <collision name="i3"><pose>6 6 0.6 0 0 0</pose><geometry><box><size>8 0.2 1.2</size></box></geometry></collision>
+        <visual name="i3v"><pose>6 6 0.6 0 0 0</pose><geometry><box><size>8 0.2 1.2</size></box></geometry></visual>
+      </link>
+    </model>
+
+    <model name="event_hazard_1">
+      <static>true</static>
+      <pose>-6 -5 0.3 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><cylinder><radius>0.25</radius><length>0.6</length></cylinder></geometry>
+        <material><ambient>0.9 0.1 0.1 1</ambient><diffuse>0.9 0.1 0.1 1</diffuse></material></visual></link>
+    </model>
+    <model name="event_victim_1">
+      <static>true</static>
+      <pose>5 2 0.3 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><cylinder><radius>0.25</radius><length>0.6</length></cylinder></geometry>
+        <material><ambient>0.1 0.3 0.9 1</ambient><diffuse>0.1 0.3 0.9 1</diffuse></material></visual></link>
+    </model>
+    <model name="event_hazard_2">
+      <static>true</static>
+      <pose>7 -7 0.3 0 0 0</pose>
+      <link name="link"><visual name="v"><geometry><cylinder><radius>0.25</radius><length>0.6</length></cylinder></geometry>
+        <material><ambient>0.9 0.1 0.1 1</ambient><diffuse>0.9 0.1 0.1 1</diffuse></material></visual></link>
+    </model>
+  </world>
+</sdf>
